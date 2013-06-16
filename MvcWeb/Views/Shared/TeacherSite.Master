@@ -1,0 +1,86 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <title>整体结构</title>
+</head>
+
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <table cellpadding="0" cellspacing="0" style=" margin:0px; height:100%; width:100%; border:0" > 
+            <tr style="border:0; width:100%; height:60px; background-image:url(https://raw.github.com/hujialin/Hujialin/master/MvcWeb/Content/image/head.jpg)">
+                <td>
+                    <table cellpadding="0" cellspacing="0" style="width:100%; height:100%; border:0;">
+                        <tr style="height:15px"><td></td></tr>
+                        <tr>
+                            <td style="border:0;width:8%"></td>
+                            <td style="border:0;width:30%">
+                                <img id="img_headleft" alt="head_left" style="border-width:0px" width="450px"
+                                            src="https://raw.github.com/hujialin/Hujialin/master/MvcWeb/Content/image/head_left.jpg" />
+                            </td>
+                            <td style="border:0;width:25%"></td>
+                            <td style="border:0">
+                                <table style="border:0;width:100%;height:100%">
+                                    <tr style="height:40%; width:100%; border:0;" >
+                                        <td align="center">
+                                            <%--<% Html.RenderPartial("LogOnUserControl"); %>--%>
+                                            欢迎进入！
+                                        </td>
+                                    </tr>
+                                    <tr style="color:Black">
+                                        <td align="center">      
+                                                <%=Html.ActionLink("主页","Teacher","Home") %>
+                                                &nbsp;&nbsp;                                      
+                                                <%=Html.ActionLink("退出","Index","Home") %>
+                                                
+                                        </td>                                        
+                                    </tr>
+                                    <tr style="height:5%; width:100%; border:0;">
+                                        <td></td>
+                                    </tr>
+                                </table>                            
+                            </td>                                               
+                            <td align="right" style=" border:0; width:10%">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <table style="width:80%; border:0" align="center">
+
+            <tr style="border:0; width:100%; height:20px"><td></td></tr>
+
+            <tr align="center" style="border:0; height:50px; background-color:#F0FFFF; color:White; margin-left:50px">
+                <td align="center">
+
+                    <input type="button" value="系统简介" onclick="window.location='<%=Url.Action("TeacherAbout","Account")%>'"
+                           style="color:Black; border:0px; border-style:none; background-color:#F0FFFF; font-size:20px; font-family:@微软雅黑"/>
+
+                    <input type="button" value="学生信息" onclick="window.location='<%=Url.Action("TeacherStudentInfo","Account")%>'"
+                           style="margin-left:120px; color:Black; border:0px; border-style:none; background-color:#F0FFFF; font-size:20px; font-family:@微软雅黑"/>
+
+                    <input type="button" value="论文审阅" onclick="window.location='<%=Url.Action("TeacherThesisCheck","Account")%>'"
+                           style="margin-left:120px; color:Black; border:0px; border-style:none; background-color:#F0FFFF; font-size:20px; font-family:@微软雅黑"/>
+
+                    <input type="button" value="学生成绩" onclick="window.location='<%=Url.Action("TeacherStudentGrade","Account")%>'"
+                           style="margin-left:120px; color:Black; border:0px; border-style:none; background-color:#F0FFFF; font-size:20px; font-family:@微软雅黑"/>
+                </td>
+            </tr>
+
+            <tr style="border:0; width:100%; height:10px"><td></td></tr>
+
+            <tr style="border:0; background-color:#FFFAF0; height:500px">
+                <td valign="top">
+                    <asp:ContentPlaceHolder ID="Main" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+        </table> 
+    </div>   
+    </form>  
+</body>
+</html>
